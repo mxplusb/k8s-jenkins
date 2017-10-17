@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jenkins-ssl-term
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  tls:
+  - hosts:
+    - jenkins.reboot3times.org
+    secretName: tls-secret
+  rules:
+  - host: jenkins.reboot3times.org
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: jenkins-ui
+          servicePort: 80
