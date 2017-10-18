@@ -26,7 +26,7 @@ spec:
           failureThreshold: 5
         env:
         - name: JENKINS_OPTS
-          value: ""
+          value: "--prefix=/jenkins"
         volumeMounts:
         - mountPath: /var/jenkins_home
           name: jenkins-master

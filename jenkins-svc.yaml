@@ -5,6 +5,7 @@
     name: jenkins-ui
     namespace: ci
   spec:
+    type: LoadBalancer
     selector:
       app: master
     ports:
